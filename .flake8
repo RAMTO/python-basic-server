@@ -1,0 +1,22 @@
+[flake8]
+# Flake8 configuration file
+# Maximum line length
+max-line-length = 88
+
+# Exclude directories and files
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    .pytest_cache,
+    build,
+    dist
+
+# Ignore specific error codes
+# W391: blank line at end of file (we'll let black handle this)
+ignore = W391
+
+# Maximum complexity
+max-complexity = 10
+

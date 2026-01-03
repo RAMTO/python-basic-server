@@ -9,42 +9,33 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def home():
     """Root endpoint - returns a welcome message."""
-    return jsonify({
-        'message': 'Welcome to the basic Python server!',
-        'status': 'running'
-    })
+    return jsonify(
+        {"message": "Welcome to the basic Python server!", "status": "running"}
+    )
 
 
-@app.route('/health')
+@app.route("/health")
 def health():
     """Health check endpoint - returns server status."""
-    return jsonify({
-        'status': 'healthy',
-        'service': 'python-basic-server'
-    })
+    return jsonify({"status": "healthy", "service": "python-basic-server"})
 
 
-@app.route('/api/hello')
+@app.route("/api/hello")
 def hello():
     """Simple hello endpoint."""
-    return jsonify({
-        'message': 'Hello, World!'
-    })
+    return jsonify({"message": "Hello, World!"})
 
 
-@app.route('/api/hello/<name>')
+@app.route("/api/hello/<name>")
 def hello_name(name):
     """Personalized hello endpoint with name parameter."""
-    return jsonify({
-        'message': f'Hello, {name}!'
-    })
+    return jsonify({"message": f"Hello, {name}!"})
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Run the server in debug mode
     # Debug mode enables auto-reload on code changes
-    app.run(debug=True, host='0.0.0.0', port=3000)
-
+    app.run(debug=True, host="0.0.0.0", port=3000)
