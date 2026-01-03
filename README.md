@@ -114,3 +114,47 @@ curl http://localhost:3000/api/hello
 # Personalized hello
 curl http://localhost:3000/api/hello/John
 ```
+
+## Docker Deployment
+
+### Build and Run with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t python-basic-server .
+```
+
+Run the container:
+
+```bash
+docker run -d -p 3000:3000 --name python-basic-server python-basic-server
+```
+
+### Using Docker Compose
+
+Build and run with docker-compose:
+
+```bash
+docker-compose up -d
+```
+
+View logs:
+
+```bash
+docker-compose logs -f
+```
+
+Stop the container:
+
+```bash
+docker-compose down
+```
+
+### Production Notes
+
+- The Dockerfile uses **gunicorn** as the WSGI server (production-ready)
+- Runs with 2 workers and 2 threads per worker
+- Includes health check endpoint
+- Runs as non-root user for security
+- Uses Python 3.12 slim image for smaller size
