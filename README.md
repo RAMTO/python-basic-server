@@ -53,6 +53,45 @@ pytest tests/test_app.py::TestRootEndpoint::test_root_endpoint_returns_200
 
 The test suite includes 16 tests covering all endpoints, status codes, JSON responses, and edge cases.
 
+## Linting and Formatting
+
+### Linting with flake8
+
+Check code for style and quality issues:
+
+```bash
+flake8 app.py tests/
+```
+
+Check specific files or directories:
+
+```bash
+flake8 app.py
+flake8 tests/
+```
+
+### Formatting with black
+
+Check if code needs formatting (without making changes):
+
+```bash
+black --check app.py tests/
+```
+
+Format code automatically:
+
+```bash
+black app.py tests/
+```
+
+Format all Python files in the project:
+
+```bash
+black .
+```
+
+**Note:** Configuration files (`.flake8` and `pyproject.toml`) are already set up with appropriate settings.
+
 ## Available Endpoints
 
 - `GET /` - Welcome message
