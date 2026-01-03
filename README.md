@@ -24,6 +24,35 @@ python app.py
 
 The server will start on `http://localhost:3000`
 
+## Running Tests
+
+Run all tests:
+
+```bash
+pytest
+```
+
+Run tests with verbose output:
+
+```bash
+pytest -v
+```
+
+Run a specific test file:
+
+```bash
+pytest tests/test_app.py
+```
+
+Run a specific test class or test method:
+
+```bash
+pytest tests/test_app.py::TestRootEndpoint
+pytest tests/test_app.py::TestRootEndpoint::test_root_endpoint_returns_200
+```
+
+The test suite includes 16 tests covering all endpoints, status codes, JSON responses, and edge cases.
+
 ## Available Endpoints
 
 - `GET /` - Welcome message
